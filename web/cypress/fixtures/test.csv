@@ -1,0 +1,4 @@
+email,password,expected-result
+papito@webdojo.com, katana123,"Olá QA, esse é o seu Dojo para aprender Automação de Testes."
+papito@webdojo.com, senha-invalida,Acesso negado! Tente novamente
+a@a.com, katana123,Acesso negado! Tente novamente

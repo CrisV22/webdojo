@@ -24,6 +24,9 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import 'cypress-real-events';
+import './actions/consultancy.actions'
+
 Cypress.Commands.add('start', () => {
     cy.viewport(1920, 1080);
     cy.visit('http://localhost:3000');
@@ -34,6 +37,11 @@ Cypress.Commands.add('submitLoginForm', (email, password) => {
     cy.get('#password').type(password);
     cy.contains('button', 'Entrar').click();
 });
+
+Cypress.Commands.add('login', () => {
+    cy.start()
+    cy.submitLoginForm('papito@webdojo.com', 'katana123')
+})
 
 Cypress.Commands.add('goTo', (buttonName, pageTitle) => {
     // Botão só com css de estilo contornado com .contains (alternativo ao Xpath) com o nome do botão para orientação do teste a comportamento.
@@ -77,3 +85,15 @@ Cypress.Commands.add('addTechs', (techs) => {
             .should('contain.text', tech);
     });
 });
+
+Cypress.Commands.add('checkRequiredFields', (form) => {
+        form.forEach(({ label, message }) => {
+            cy.contains('label', label)
+                .parent()
+                .find('p')
+                .should('have.text', message)
+                .and('be.visible')
+                .and('have.class', 'text-red-400') // Verifica a classe CSS
+                .and('have.css', 'color', 'rgb(248, 113, 113)') // Verifica a cor do texto
+        })
+})
