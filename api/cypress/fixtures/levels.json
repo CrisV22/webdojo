@@ -1,0 +1,9 @@
+{
+    "testLevel": {
+        "level1": "🟢 Testes positivos (caminho feliz)",
+        "level2": "🟢 Testes positivos com parâmetros opcionais",
+        "level3": "🟠 Testes negativos com inputs válidos",
+        "level4": "🔴 Testes negativos com inputs inválidos",
+        "level5": "💥 Testes destrutivos"
+    }
+}

@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "serve -s dist -p 3000"
+    "dev": "serve -s dist -p 3000",
+    "test": "npx cypress run --spec 'cypress/e2e/s14-api/*.cy.js' --config viewportWidth=1920,viewportHeight=1080",
+    "test:login": "npx cypress run --spec 'cypress/e2e/ss14-api/login.cy.js' --config viewportWidth=1920,viewportHeight=1080",
+    "test:mobile": "npx cypress run --spec 'cypress/e2e/s14-api/*.cy.js' --config viewportWidth=414,viewportHeight=846"
   },
   "dependencies": {
     "serve": "^14.2.4"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "devDependencies": {
-    "cypress": "^14.1.0",
+    "@faker-js/faker": "^9.9.0",
+    "cypress": "^14.3.3",
     "cypress-real-events": "^1.14.0"
   }
 }

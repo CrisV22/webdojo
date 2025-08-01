@@ -6,5 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     defaultBrowser: 'chrome',
+    video: false,
+    baseUrl: 'http://localhost:3000/'
   },
 });

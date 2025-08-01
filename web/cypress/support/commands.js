@@ -26,10 +26,10 @@
 
 import 'cypress-real-events';
 import './actions/consultancy.actions'
+import {getTodayDate} from './../support/utils'
 
 Cypress.Commands.add('start', () => {
-    cy.viewport(1920, 1080);
-    cy.visit('http://localhost:3000');
+    cy.visit('/');
 })
 
 Cypress.Commands.add('submitLoginForm', (email, password) => {
@@ -38,9 +38,25 @@ Cypress.Commands.add('submitLoginForm', (email, password) => {
     cy.contains('button', 'Entrar').click();
 });
 
-Cypress.Commands.add('login', () => {
-    cy.start()
-    cy.submitLoginForm('papito@webdojo.com', 'katana123')
+Cypress.Commands.add('login', (ui = false) => {
+    if (ui === true) {
+        cy.start()
+        cy.submitLoginForm('papito@webdojo.com', 'katana123')        
+    } else {
+        const token = 'e1033d63a53fe66c0fd3451c7fd8f617'
+        const loginDate = getTodayDate()
+    
+        cy.setCookie('login_date', loginDate)
+        cy.visit('/dashboard', {
+            onBeforeLoad(win) {
+                win.localStorage.setItem('token', token)
+            }
+        })
+    }
+})
+
+Cypress.Commands.add('goToSignup', () => {
+    cy.contains('span', 'Cadastre-se').click()
 })
 
 Cypress.Commands.add('goTo', (buttonName, pageTitle) => {
@@ -87,13 +103,13 @@ Cypress.Commands.add('addTechs', (techs) => {
 });
 
 Cypress.Commands.add('checkRequiredFields', (form) => {
-        form.forEach(({ label, message }) => {
-            cy.contains('label', label)
-                .parent()
-                .find('p')
-                .should('have.text', message)
-                .and('be.visible')
-                .and('have.class', 'text-red-400') // Verifica a classe CSS
-                .and('have.css', 'color', 'rgb(248, 113, 113)') // Verifica a cor do texto
-        })
+    form.forEach(({ label, message }) => {
+        cy.contains('label', label)
+            .parent()
+            .find('p')
+            .should('have.text', message)
+            .and('be.visible')
+            .and('have.class', 'text-red-400') // Verifica a classe CSS
+            .and('have.css', 'color', 'rgb(248, 113, 113)') // Verifica a cor do texto
+    })
 })

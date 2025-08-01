@@ -1,0 +1,56 @@
+{
+  "personal": {
+    "name": "Fernando Papito",
+    "email": "papito@webdojo.com",
+    "phone": "11 999999999",
+    "consultancyType": "Individual",
+    "personType": "CPF",
+    "document": "96633173458",
+    "discoveryChannels": [
+      "Instagram",
+      "Udemy",
+      "Indicação de Amigo"
+    ],
+    "file": "cypress/fixtures/pdf-cypress.pdf",
+    "description": "a",
+    "techs": [
+      "Cypress",
+      "Selenium",
+      "Playwright",
+      "WebdriverIO",
+      "TestCafe",
+      "Puppeteer",
+      "Robot Framework"
+    ],
+    "terms": true
+  },
+  "company": {
+    "name": "Fernando Papito",
+    "email": "papito@webdojo.com",
+    "phone": "11 999999999",
+    "consultancyType": "In Company",
+    "personType": "CNPJ",
+    "document": "89124155000143",
+    "discoveryChannels": [
+      "LinkedIn",
+      "YouTube"
+    ],
+    "file": "cypress/fixtures/pdf-cypress.pdf",
+    "description": "a",
+    "techs": [
+      "Cypress",
+      "Selenium",
+      "Playwright",
+      "WebdriverIO",
+      "TestCafe",
+      "Puppeteer",
+      "Robot Framework"
+    ],
+    "terms": true
+  },
+  "requiredFields": [
+    { "label": "Nome Completo", "message": "Campo obrigatório" },
+    { "label": "Email", "message": "Campo obrigatório" },
+    { "label": "termos de uso", "message": "Você precisa aceitar os termos de uso" }
+  ]
+}

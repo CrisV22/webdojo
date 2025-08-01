@@ -18,12 +18,11 @@ describe('GitHub', () => {
         })
 
         cy.contains('button', 'Mostrar Alert').click()
-
     })
 
     it('Deve confirmar um diálogo e validar a resposta positiva', () => {
         cy.on('window:confirm', (msg) => {
-            expect(msg).to.equal('Aperta um botão!')
+            expect(msg).to.equal('Aperte um botão!')
             return true // simula o click no botão OK
         })
 
@@ -36,7 +35,7 @@ describe('GitHub', () => {
 
     it('Deve cancelar um diálogo e validar a resposta negativa', () => {
         cy.on('window:confirm', (msg) => {
-            expect(msg).to.equal('Aperta um botão!')
+            expect(msg).to.equal('Aperte um botão!')
             return false // simula o click no botão Cancelar
         })
 
@@ -58,7 +57,7 @@ describe('GitHub', () => {
         })
 
         cy.on('window:alert', (msg) => {
-            expect(msg).to.equal('Olá Cristian! Boas vindas ao WebDojo!')
+            expect(msg).to.equal('Olá Cristian! Boas-vindas ao WebDojo!')
         })
 
         cy.contains('button', 'Mostrar Prompt').click()
