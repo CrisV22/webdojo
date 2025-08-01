@@ -55,7 +55,7 @@
 2. Não suporta mouseHover; -> npm install cypress-real-events
 3. Interagir com nova guia/janela
 4. iFrames
-5. 
+5. Os testes que demoram 10s levam 1min+ porque no plano free a infraestrutura é compartilhada.
 
 ## Utils
 Folder: npx cypress run --spec "cypress/e2e/s6-ganchos-helpers/*.cy.js"
