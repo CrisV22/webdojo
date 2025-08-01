@@ -1,0 +1,15 @@
+{
+  "name": "petlov",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:cycloud": "npx cypress run --record --key f668ba02-2900-4df8-92bf-567271696bd4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.3.3"
+  }
+}

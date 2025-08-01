@@ -1,0 +1,13 @@
+{
+  "name": "Pet Solidário",
+  "email": "pet@solidario.org",
+  "address": {
+    "zipCode": "04534-011",
+    "street": "Rua Joaquim Floriano",
+    "additionalInfo": "18o andar",
+    "number": 1000,
+    "district": "Itaim Bibi",
+    "city": "São Paulo",
+    "state": "SP"
+  }
+}
